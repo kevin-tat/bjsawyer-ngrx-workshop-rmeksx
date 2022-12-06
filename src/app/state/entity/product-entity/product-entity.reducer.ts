@@ -14,6 +14,18 @@ export function productEntityReducer(
       return {
         ...state,
       }
+    case ProductEntityActionType.FETCH_ITEM:
+      return {
+        ...state,
+        isLoading: true,
+        hasLoaded: false,
+      }
+    case ProductEntityActionType.FETCH_ITEM_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        hasLoaded: true,
+      }
     default:
       return state
   }
