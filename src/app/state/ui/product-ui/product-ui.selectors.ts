@@ -6,7 +6,7 @@ import { IProduct } from './product.interface'
 
 const selectProductUiState: MemoizedSelector<IAppState, IProductUiState> = createFeatureSelector(PRODUCT_UI_STATE_NAME)
 
-export const selectAllProducts = createSelector(selectAllProductEntites, (products) =>
+export const selectAllProducts = createSelector(selectAllProductEntites, (products): IProduct[] =>
   products.map((product) => ({ id: product.id, title: product.title, price: product.price, image: product.image }))
 )
 
