@@ -15,11 +15,6 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit() {
     // TODO: Get selected product from state by ID
-    this.selectedProduct$ = of({
-      id: 0,
-      title: 'Fake Product',
-      price: '$0.00',
-      image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-    } as IProduct)
+    this.selectedProduct$ = this._facade.selectedProduct$
   }
 }

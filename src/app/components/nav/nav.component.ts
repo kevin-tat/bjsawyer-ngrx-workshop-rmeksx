@@ -14,6 +14,6 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
     // TODO: Get selected products count from state
-    this.numSelectedProducts$ = of(0)
+    this.numSelectedProducts$ = this._facade.numSelectedProducts$
   }
 }

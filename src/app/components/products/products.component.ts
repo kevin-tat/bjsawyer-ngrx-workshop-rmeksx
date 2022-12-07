@@ -15,6 +15,7 @@ export class ProductsComponent {
 
   ngOnInit(): void {
     // TODO: Dispatch action to get products and retrieve them from a state selector instead of directly from the API request
-    this.products$ = this._facade.getProducts()
+    this.products$ = this._facade.products$
+    this._facade.getProducts()
   }
 }

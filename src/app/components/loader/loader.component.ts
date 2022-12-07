@@ -22,7 +22,7 @@ export class LoaderComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     // TODO: Check if any of app's state is loading via a selector
-    this._shouldShowLoader$ = of(false)
+    this._shouldShowLoader$ = this._facade.shouldShowLoader$
   }
 
   ngAfterViewInit(): void {

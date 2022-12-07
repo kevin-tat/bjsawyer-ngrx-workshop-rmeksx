@@ -15,6 +15,6 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     // TODO: Get items in cart from state
-    this.cart$ = of([])
+    this.cart$ = this._facade.cart$
   }
 }
