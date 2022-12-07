@@ -14,6 +14,11 @@ export function productUiReducer(
       return {
         ...state,
       }
+    case ProductUiActionType.STORE_SELECTED_ID:
+      return {
+        ...state,
+        id: action.payload,
+      }
     default:
       return state
   }
