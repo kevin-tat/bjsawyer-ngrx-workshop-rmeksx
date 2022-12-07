@@ -17,8 +17,21 @@ export function productUiReducer(
     case ProductUiActionType.STORE_SELECTED_ID:
       return {
         ...state,
-        id: action.payload,
+        selectedId: action.payload,
       }
+
+    case ProductUiActionType.ADD_ITEM_TO_CART:
+      return {
+        ...state,
+        cartProductIds: [...state.cartProductIds, action.payload],
+      }
+
+    case ProductUiActionType.REMOVE_ITEM_FROM_CART:
+      return {
+        ...state,
+        cartProductIds: [...state.cartProductIds.filter((id) => id !== action.payload)],
+      }
+
     default:
       return state
   }

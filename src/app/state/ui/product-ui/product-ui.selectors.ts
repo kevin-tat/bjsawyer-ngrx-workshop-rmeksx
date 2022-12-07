@@ -14,3 +14,13 @@ const selectItemById = createSelector(selectProductUiState, (state) => state.sel
 export const selectProductById = createSelector(selectAllProducts, selectItemById, (products, id) =>
   products.find((product) => product.id === id)
 )
+
+const selectItemsInCart = createSelector(selectProductUiState, (state) => state.cartProductIds)
+
+export const selectProductsFromCart = createSelector(selectItemsInCart, selectAllProducts, (cartItems, products) =>
+  cartItems.map((item) => products.find((product) => item === product.id))
+)
+
+export const selectNumberOfItemsInCart = createSelector(selectItemsInCart, (cart) => cart.length)
+
+export const selectIfIdInCart = (id: number) => createSelector(selectItemsInCart, (items) => items.includes(id))
